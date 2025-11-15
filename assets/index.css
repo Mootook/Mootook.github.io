@@ -1,0 +1,132 @@
+:root {
+    --home-window-width: 240px;
+}
+
+* {
+    font-family: monospace;
+}
+
+body {
+    /* https://stackoverflow.com/questions/7261464/is-it-possible-to-create-a-grid-like-background-in-css-without-images-or-tables */
+    background: url(data:image/gif;base64,R0lGODlhFAAUAIAAAMDAwP///yH5BAEAAAEALAAAAAAUABQAAAImhI+pwe3vAJxQ0hssnnq/7jVgmJGfGaGiyoyh68GbjNGXTeEcGxQAOw==);
+    animation: panbg 120s linear infinite alternate;
+}
+
+a {
+    color: blue;
+    /* text-decoration: underline; */
+}
+
+@keyframes panbg {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 100% 100%;
+    }
+
+}
+.icon {
+    width: 20px;
+    height: 22px;
+}
+
+#center-container {
+    width: var(--home-window-width);
+    position: absolute;
+    left: calc(50% - var(--home-window-width) / 2);
+    top: calc(50% - 100px);
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background-color: black;
+}
+
+.footer {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+}
+
+.footer>a {
+    color: white;
+}
+
+.window {
+    background-color: lightgray;
+    border: 1px solid black;
+    z-index: 1;
+}
+
+.window.shadow {
+    box-shadow: 4px 4px 0px rgb(0 0 0/.8);
+}
+
+.window>.contents {
+    background-color: white;
+    border: 1px solid black;
+    border-top: 0;
+    padding: 8px 6px;
+    margin: 0 12px 12px 12px;
+}
+
+.window>.contents>h1 {
+    text-align: center;
+    color: #2b2b2b;
+}
+
+.tree-corner {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.section {
+    margin: 24px 48px;
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    width: 800px;
+}
+
+.image-wrapper {
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.icon-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.draggable {
+    cursor: move;
+}
+
+.window-bar {
+    background: #363cff;
+    background: linear-gradient(90deg, rgba(54, 60, 255, 1) 0%, rgba(140, 144, 255, 1) 100%);
+    border-bottom: 1px solid black;
+    height: 12px;
+    width: 100%;
+}
+
+.window-bar.lg {
+    height: 24px;
+}
+
+.border-gray {
+    border: 1px solid gray;
+}
